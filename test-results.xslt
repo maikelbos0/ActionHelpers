@@ -11,7 +11,7 @@
 	<xsl:template match="/test:TestRun">
 		<xsl:value-of select="$newline"/>
 		
-		<xsl:text># Test results</xsl:text>
+		<xsl:text># Test summary</xsl:text>
 		<xsl:value-of select="$newline"/>
 		
 		<xsl:value-of select="$newline"/>
