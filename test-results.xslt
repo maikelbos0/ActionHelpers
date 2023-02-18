@@ -11,30 +11,33 @@
 	<xsl:template match="/test:TestRun">
 		<xsl:value-of select="$newline"/>
 		
-		<xsl:text># Test summary</xsl:text>
-		<xsl:value-of select="$newline"/>
-		
+		<xsl:text># Test summary</xsl:text><xsl:value-of select="$newline"/>
 		<xsl:value-of select="$newline"/>
 		
 		<xsl:text>Total: </xsl:text>
 		<xsl:value-of select="test:ResultSummary/test:Counters/@total"/>
+		<xsl:text>  </xsl:text>
 		<xsl:value-of select="$newline"/>
 		
 		<xsl:text>Executed: </xsl:text>
 		<xsl:value-of select="test:ResultSummary/test:Counters/@executed"/>
+		<xsl:text>  </xsl:text>
 		<xsl:value-of select="$newline"/>
 		
 		<xsl:text>Passed: </xsl:text>
 		<xsl:value-of select="test:ResultSummary/test:Counters/@passed"/>
+		<xsl:text>  </xsl:text>
 		<xsl:value-of select="$newline"/>
 		
 		<xsl:text>Failed: </xsl:text>
 		<xsl:value-of select="test:ResultSummary/test:Counters/@failed"/>
+		<xsl:text>  </xsl:text>
 		<xsl:value-of select="$newline"/>
 		
 		<xsl:value-of select="$newline"/>
 		
 		<xsl:text># Tests</xsl:text>
+		<xsl:value-of select="$newline"/>
 		<xsl:value-of select="$newline"/>
 
 		<xsl:for-each select="test:Results/test:UnitTestResult">
@@ -45,7 +48,8 @@
 			</xsl:choose>
 
 			<xsl:value-of select="@testName"/>
-			<xsl:value-of select="$newline"/>
+			<xsl:text>  </xsl:text>
+			<xsl:value-of select="$newline"/>			
 
 			<xsl:if test="test:Output/test:ErrorInfo">
 				<xsl:text>```</xsl:text>
