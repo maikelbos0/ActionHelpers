@@ -3,7 +3,7 @@
 
 	<xsl:output method="text" omit-xml-declaration="yes" />
 
-	<xsl:param name="fileName" />
+	<xsl:param name="name" />
 
 	<xsl:variable name='newline'>
 		<xsl:text>
@@ -14,7 +14,7 @@
 		<xsl:value-of select="$newline"/>
 
 		<xsl:text># </xsl:text>
-		<xsl:value-of select="$fileName"/>
+		<xsl:value-of select="$name"/>
 		<xsl:value-of select="$newline"/>
 		<xsl:value-of select="$newline"/>
 
