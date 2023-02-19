@@ -3,6 +3,8 @@
 
 	<xsl:output method="text" omit-xml-declaration="yes" />
 
+	<xsl:param name="fileName" />
+
 	<xsl:variable name='newline'>
 		<xsl:text>
 </xsl:text>
@@ -11,7 +13,8 @@
 	<xsl:template match="/test:TestRun">
 		<xsl:value-of select="$newline"/>
 
-		<xsl:text># Test summary</xsl:text>
+		<xsl:text># </xsl:text>
+		<xsl:value-of select="$fileName"/>
 		<xsl:value-of select="$newline"/>
 		<xsl:value-of select="$newline"/>
 

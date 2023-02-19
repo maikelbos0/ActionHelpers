@@ -2,6 +2,8 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
 	<xsl:output method="text" omit-xml-declaration="yes" />
+
+	<xsl:param name="fileName" />
 	
 	<xsl:variable name='newline'>
 		<xsl:text>
@@ -11,7 +13,8 @@
 	<xsl:template match="/coverage">
 		<xsl:value-of select="$newline"/>
 
-		<xsl:text># Code coverage</xsl:text>
+		<xsl:text># </xsl:text>
+		<xsl:value-of select="$fileName"/>
 		<xsl:value-of select="$newline"/>
 		<xsl:value-of select="$newline"/>
 
