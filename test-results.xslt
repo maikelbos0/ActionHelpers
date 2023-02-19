@@ -39,7 +39,7 @@
 		<xsl:value-of select="$newline"/>
 		<xsl:value-of select="$newline"/>
 
-		<xsl:text># Tests</xsl:text>
+		<xsl:text>## Tests</xsl:text>
 		<xsl:value-of select="$newline"/>
 		<xsl:value-of select="$newline"/>
 
