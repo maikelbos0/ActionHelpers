@@ -14,6 +14,17 @@
 		<xsl:value-of select="$newline"/>
 
 		<xsl:text># </xsl:text>
+		<xsl:choose>
+			<xsl:when test="test:Results/test:UnitTestResult[@outcome='Failed']">
+				<xsl:text>❌ </xsl:text>
+			</xsl:when>
+			<xsl:when test="test:Results/test:UnitTestResult[@outcome!='Passed']">
+				<xsl:text>❔ </xsl:text>
+			</xsl:when>
+			<xsl:otherwise>
+				<xsl:text>✔ </xsl:text>
+			</xsl:otherwise>
+		</xsl:choose>
 		<xsl:value-of select="$name"/>
 		<xsl:value-of select="$newline"/>
 		<xsl:value-of select="$newline"/>
@@ -45,9 +56,15 @@
 
 		<xsl:for-each select="test:Results/test:UnitTestResult">
 			<xsl:choose>
-				<xsl:when test="@outcome='Passed'">✔ </xsl:when>
-				<xsl:when test="@outcome='Failed'">❌ </xsl:when>
-				<xsl:otherwise>❔ </xsl:otherwise>
+				<xsl:when test="@outcome='Passed'">
+					<xsl:text>✔ </xsl:text>
+				</xsl:when>
+				<xsl:when test="@outcome='Failed'">
+					<xsl:text>❌ </xsl:text>
+				</xsl:when>
+				<xsl:otherwise>
+					<xsl:text>❔ </xsl:text>
+				</xsl:otherwise>
 			</xsl:choose>
 
 			<xsl:value-of select="@testName"/>
